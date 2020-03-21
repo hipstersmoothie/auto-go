@@ -1,0 +1,32 @@
+version: 2
+
+defaults: &defaults
+  working_directory: ~/auto-example
+  docker:
+    - image: circleci/golang:1.12
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - make
+
+  release:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: >
+          - curl -vkL -o - https://github.com/intuit/auto/releases/download/v7.2.0/auto-linux.gz | gunzip > ~/auto
+          - chmod a+x ~/auto
+          - auto shipit
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          branches:
+            only:
+              - master
