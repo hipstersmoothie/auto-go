@@ -20,7 +20,6 @@ jobs:
       - run: go get -u golang.org/x/lint/golint
       - run: curl -vkL -o - https://github.com/intuit/auto/releases/download/v9.21.0/auto-linux.gz | gunzip > ~/auto
       - run: chmod a+x ~/auto
-      - run: git diff
       - run: ~/auto shipit
 
 workflows:

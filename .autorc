@@ -9,6 +9,10 @@
       {
         "afterVersion": "RELEASE_TAG=`git describe --tags --abbrev=0` make"
       }
+    ],
+    [
+      "upload-assets",
+      "bin/*"
     ]
   ]
 }
