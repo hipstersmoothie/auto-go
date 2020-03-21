@@ -1,5 +1,7 @@
 export GO111MODULE=on
 
+go get -u golang.org/x/lint/golint
+
 TIMESTAMP := $(shell date '+%m%d%H%M%Y.%S')
 RELEASE_TAG   ?= $(TIMESTAMP)
 
