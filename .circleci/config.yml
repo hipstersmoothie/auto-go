@@ -10,12 +10,14 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - run: go get -u golang.org/x/lint/golint
       - run: make
 
   release:
     <<: *defaults
     steps:
       - checkout
+      - run: go get -u golang.org/x/lint/golint
       - run: >
           - curl -vkL -o - https://github.com/intuit/auto/releases/download/v7.2.0/auto-linux.gz | gunzip > ~/auto
           - chmod a+x ~/auto
