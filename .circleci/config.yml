@@ -10,7 +10,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - make
+      - run: make
 
   release:
     <<: *defaults
