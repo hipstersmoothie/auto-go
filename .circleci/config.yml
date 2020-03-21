@@ -26,7 +26,7 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test:
-          branches:
-            only:
-              - master
+      - release:
+          filters:
+            branches:
+              only: master
