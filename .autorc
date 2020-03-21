@@ -12,7 +12,9 @@
     ],
     [
       "upload-assets",
-      "bin/*"
+      [
+        "bin/*"
+      ]
     ]
   ]
 }
